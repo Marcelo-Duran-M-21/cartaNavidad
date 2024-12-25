@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #16181b, #2a4365);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+      background-image:url(images/tuli.jpg);
+      background-color:rgb(247, 191, 247);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    text-align: center;
+    color:red;
+    position: relative;
+  }
+
+  h1:before,
+  h1:after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0px;
+  }
+
+  h1:before {
+    left: -70px;
+  }
+
+  h1:after {
+    right: -70px;
+  }
+
+
+    p {
+      color:black;
+      line-height: 1.0;
+      margin-bottom: 10px;
+      font-size: 1.14em;
+      font-weight: bold;
+    }
+
+    .signature {
+      font-style: italic;
+      color: #4a5568;
+      margin-top: 30px;
+    }
+
+    .snowflake {
+      color: white;
+      font-size: 1.5em;
+      font-family: Arial;
+      position: absolute;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100vh); }
+      100% { transform: translateY(100vh); }
+    }
+
+
+    .logout-btn:hover {
+            background-color:red;
+        }
+        
+        .logout-btn1 {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .logout-btn1:hover {
+            background-color: #45a049;
+        }
+  </style>
+
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="musica/blue (Official Music Video).mp3" type="audio/mpeg">
+      </audio>
+  <div class="card">
+    <div>
+    <h1>¡Feliz Navidad!</h1>
+    <p>En esta mágica Noche buena, mientras las luces navidenas brillan y el espiritu festivo llena cada rincon, siento una necesidad especial de expresarte lo mucho que significas para mi.</p>
+    <p>Este año ha estado lleno de momentos compartidos, risas y tambien algunos desafíos, pero tu presencia ha hecho que cada día sea más brillante. Eres ese regalo que no viene envuelto en papel brillante, sino en gestos de cariño, palabras sinceras y momentos inolvidables.</p>
+    <p>Cuando pienso en la Navidad, pienso en familia, en amor, en gratitud, y tú representas todo eso para mí. Tu forma de ser, tu sonrisa, tu apoyo incondicional... son regalos que atesoro cada día del año.</p>    
+    <p>En esta noche especial, deseo que la magia de la Navidad te envuelva por completo. Que cada estrella en el cielo sea un deseo cumplido para ti, y que el año nuevo te traiga toda la felicidad que mereces.</p>
+    <p>Al final te deje algunos peliculas para que los veas hoy y asi te distraigas un poco y te relajes lo hice pensando en tus gustas ...Se que te gustan los dibujos animados asi que te deje algunos ahi ... <span style="color:red;">Espero te gusten</span></p>
+    <div class="signature">Con todo mi  Carino Att: Marcelo Duran (MD) ,❤️</div>
+    <a href="videos.html" class="logout-btn1"> Ver videos graciosos </a>
+    </div>
+    
+</div>
+
+  <script>
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.innerHTML = '&#10052';
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.body.appendChild(snowflake);
+
+      snowflake.addEventListener('animationend', () => {
+        snowflake.remove();
+      });
+    }
+
+    setInterval(createSnowflake, 300);
+  </script>
+</body>
+</html>
